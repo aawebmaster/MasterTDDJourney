@@ -64,19 +64,19 @@ namespace XUnitTest
         }
         
         [Fact]
-        public void Return_8_for_Position_8()
+        public void Return_21_for_Position_8()
         {
             Assert.Equal(21 , Fibonacci.Fibonacci.NthFibonacci(8));
         }
         
         [Fact]
-        public void Return_8_for_Position_9()
+        public void Return_34_for_Position_9()
         {
             Assert.Equal(34 , Fibonacci.Fibonacci.NthFibonacci(9));
         }
         
         [Fact]
-        public void Return_8_for_Position_10()
+        public void Return_55_for_Position_10()
         {
             Assert.Equal(55 , Fibonacci.Fibonacci.NthFibonacci(10));
         }
