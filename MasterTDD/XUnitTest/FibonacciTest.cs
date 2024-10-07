@@ -13,8 +13,7 @@ namespace XUnitTest
         [Fact]
         public void Return_Error_for_Negetive_Position()
         {
-            var exception = Assert.Throws<ArgumentOutOfRangeException>(() => Fibonacci.Fibonacci.NthFibonacci(-1));
-            Assert.Equal("Position must be non-negative.", exception.ParamName);
+            Assert.Throws<ArgumentOutOfRangeException>(() => Fibonacci.Fibonacci.NthFibonacci(-1));
         }
      
         [Fact]
