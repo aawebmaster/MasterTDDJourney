@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Console.WriteLine("Enter a position:");
+
+int.TryParse(Console.ReadLine(), out int position);
+Console.WriteLine($"Fibonacci number for position {position} is {(Fibonacci.Fibonacci.NthFibonacci(position))}.");
