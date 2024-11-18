@@ -23,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LeapYear\LeapYear.csproj" />
     <ProjectReference Include="..\Fibonacci\Fibonacci.csproj" />
+    <ProjectReference Include="..\StringCalculator\StringCalculator.csproj" />
   </ItemGroup>
 
 </Project>
