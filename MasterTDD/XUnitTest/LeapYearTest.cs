@@ -5,69 +5,28 @@ namespace XUnitTest
     {
 
         
-        [Fact]
-        public void ReturnTrueForYearFour()
+        [Theory]
+        [InlineData(4)]
+        [InlineData(1804)]
+        [InlineData(2008)]
+        [InlineData(2024)]
+        [InlineData(2044)]
+        [InlineData(2076)]
+        public void ReturnTrueForLeapYears(int year)
         {
-            Assert.True(LeapYear.LeapYear.IsLeapYear(4));  
-        }
-        
-        [Fact]
-        public void ReturnTrueForYear1804()
-        {
-            Assert.True(LeapYear.LeapYear.IsLeapYear(1804));  
-        }
-        
-        [Fact]
-        public void ReturnTrueForYear2008()
-        {
-            Assert.True(LeapYear.LeapYear.IsLeapYear(2008));  
-        }
-        [Fact]
-        public void ReturnTrueForYear2024()
-        {
-            Assert.True(LeapYear.LeapYear.IsLeapYear(2024));  
-        }
-            [Fact]
-        public void ReturnTrueForYear2044()
-        {
-            Assert.True(LeapYear.LeapYear.IsLeapYear(2044));  
-        }
-            [Fact]
-        public void ReturnTrueForYear2076()
-        {
-            Assert.True(LeapYear.LeapYear.IsLeapYear(2076));  
-        }
-        [Fact]
-        public void ReturnFalseForYearOne()
-        {
-            Assert.False(LeapYear.LeapYear.IsLeapYear(1));  
-        }
-        [Fact]
-        public void ReturnFalseForYear1802()
-        {
-            Assert.False(LeapYear.LeapYear.IsLeapYear(1802));  
-        }
-        
-        [Fact]
-        public void ReturnFalseForYear2003()
-        {
-            Assert.False(LeapYear.LeapYear.IsLeapYear(2003));  
+            Assert.True(LeapYear.LeapYear.IsLeapYear(year));
         }
 
-        [Fact]
-        public void ReturnFalseForYear2019()
+        [Theory]
+        [InlineData(1)]
+        [InlineData(1802)]
+        [InlineData(2003)]
+        [InlineData(2019)]
+        [InlineData(2050)]
+        [InlineData(2087)]
+        public void ReturnFalseForNonLeapYears(int year)
         {
-            Assert.False(LeapYear.LeapYear.IsLeapYear(2019));  
-        }
-        [Fact]
-        public void ReturnFalseForYear2050()
-        {
-            Assert.False(LeapYear.LeapYear.IsLeapYear(2050));  
-        }
-        [Fact]
-        public void ReturnFalseForYear2087()
-        {
-            Assert.False(LeapYear.LeapYear.IsLeapYear(2087));  
+            Assert.False(LeapYear.LeapYear.IsLeapYear(year));
         }
     }
 }

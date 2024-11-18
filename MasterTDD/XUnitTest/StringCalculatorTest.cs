@@ -3,70 +3,52 @@ namespace XUnitTest
 {
     public class StringCalculatorTest
     {
-        [Fact]
-        public void Return_Error_for_Negetive_number()
+        [Theory]
+        [InlineData("-1")]
+        [InlineData("-5")]
+        [InlineData("-9")]
+        public void Return_Error_for_Negative_Number(string input)
         {
-            Assert.Throws<ArgumentException>(() => StringCalculator.StringCalculator.Add("-1"));
+            Assert.Throws<ArgumentException>(() => StringCalculator.StringCalculator.Add(input));
         }
-        [Fact]
-        public void Return_Zero_for_Empty_String()
+
+        [Theory]
+        [InlineData("", 0)]
+        [InlineData("5", 5)]
+        [InlineData("1,2", 3)]
+        [InlineData("1,2,3", 6)]
+        [InlineData("1,2,4,5", 12)]
+
+        public void Return_Correct_Sum_for_Valid_Inputs(string input, int expected)
         {
-            Assert.Equal(0 , StringCalculator.StringCalculator.Add(""));
+            Assert.Equal(expected, StringCalculator.StringCalculator.Add(input));
         }
-        [Fact]
-        public void Return_Number_for_One_Number()
+
+        [Theory]
+        [InlineData("1\n2,3", 6)]
+        [InlineData("1\n2\n3\n7", 13)]
+        public void Return_Sum_for_Mixed_Newline_and_Comma_Delimiters(string input, int expected)
         {
-            Assert.Equal(5 , StringCalculator.StringCalculator.Add("5"));
+            Assert.Equal(expected, StringCalculator.StringCalculator.Add(input));
         }
-        [Fact]
-        public void Return_Sum_for_Two_Numbers()
+
+        [Theory]
+        [InlineData("//;\n1", 1)]
+        [InlineData("//;\n1;2", 3)]
+        [InlineData("//;\n1;2;3", 6)]
+        [InlineData("//;\n1\n2;3", 6)]
+        public void Return_Sum_for_Custom_Delimiters(string input, int expected)
         {
-            Assert.Equal(3 , StringCalculator.StringCalculator.Add("1,2"));
+            Assert.Equal(expected, StringCalculator.StringCalculator.Add(input));
         }
-        [Fact]
-        public void Return_Sum_for_Three_Numbers_and_Newline()
+
+        [Theory]
+        [InlineData("//;1;\n2;3")]
+        [InlineData("//;1;2;3")]
+        [InlineData("1,\n")]
+        public void Return_Error_for_Invalid_Format(string input)
         {
-            Assert.Equal(6 , StringCalculator.StringCalculator.Add("1\n2,3"));
-        }
-        [Fact]
-        public void Return_Sum_for_Four_Numbers_and_Newline_Instead_Commas()
-        {
-            Assert.Equal(13 , StringCalculator.StringCalculator.Add("1\n2\n3\n7"));
-        }
-        [Fact]
-        public void Return_Sum_for_Number_with_Different_Delimiters ()
-        {
-            Assert.Equal(1 , StringCalculator.StringCalculator.Add("//;\n1"));
-        }
-        [Fact]
-        public void Return_Sum_for_Two_Numbers_with_Different_Delimiters ()
-        {
-            Assert.Equal(3 , StringCalculator.StringCalculator.Add("//;\n1;2"));
-        }
-        [Fact]
-        public void Return_Sum_for_Three_Numbers_with_Different_Delimiters ()
-        {
-            Assert.Equal(6 , StringCalculator.StringCalculator.Add("//;\n1;2;3"));
-        }
-        [Fact]
-        public void Return_Sum_for_Three_Numbers_with_Different_Delimiters_Extra_Newline ()
-        {
-            Assert.Equal(6 , StringCalculator.StringCalculator.Add("//;\n1\n2;3"));
-        }
-        [Fact]
-        public void Return_Sum_for_Three_Numbers_with_Different_Delimiters_WrongFormat ()
-        {
-            Assert.Throws<ArgumentException>(() =>  StringCalculator.StringCalculator.Add("//;1;\n2;3"));
-        } 
-        [Fact]
-        public void Return_Sum_for_Three_Numbers_with_Different_Delimiters_No_Newline ()
-        {
-            Assert.Throws<ArgumentException>(() =>  StringCalculator.StringCalculator.Add("//;1;2;3"));
-        }
-        [Fact]
-        public void Add_InvalidNumberFormat_ThrowsException()
-        {
-            Assert.Throws<ArgumentException>(() => StringCalculator.StringCalculator.Add("1,\n"));
+            Assert.Throws<ArgumentException>(() => StringCalculator.StringCalculator.Add(input));
         }
     }
 }
