@@ -3,8 +3,6 @@ namespace XUnitTest
     
     public class LeapYearTest
     {
-
-        
         [Theory]
         [InlineData(4)]
         [InlineData(1804)]
