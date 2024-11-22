@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalculator", "StringC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeCalculator", "ChangeCalculator\ChangeCalculator.csproj", "{7F4BAE84-3947-44F4-8AEB-C5295AFA9088}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BowlingGame", "BowlingGame\BowlingGame.csproj", "{87B4E6D6-EA9D-4CF5-9797-1C0FB6F4FA63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7F4BAE84-3947-44F4-8AEB-C5295AFA9088}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F4BAE84-3947-44F4-8AEB-C5295AFA9088}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F4BAE84-3947-44F4-8AEB-C5295AFA9088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87B4E6D6-EA9D-4CF5-9797-1C0FB6F4FA63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B4E6D6-EA9D-4CF5-9797-1C0FB6F4FA63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B4E6D6-EA9D-4CF5-9797-1C0FB6F4FA63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B4E6D6-EA9D-4CF5-9797-1C0FB6F4FA63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

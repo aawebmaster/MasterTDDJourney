@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BowlingGame\BowlingGame.csproj" />
     <ProjectReference Include="..\ChangeCalculator\ChangeCalculator.csproj" />
     <ProjectReference Include="..\LeapYear\LeapYear.csproj" />
     <ProjectReference Include="..\Fibonacci\Fibonacci.csproj" />
